@@ -16,15 +16,17 @@ async function buildEmailDict(path: string): Promise<EmailDict> {
   const htmlContent = await getHTLMFromMJML(path)
   const templateNameParts = path.split('/')
   const templateName = templateNameParts.reverse()[0].split('.')[0]
-  return {name: templateName, content: htmlContent}
+  return { name: templateName, content: htmlContent }
 }
 
 async function findEmailTemplateFiles(directory: string) {
-  const items = await fs.readdir(directory, {withFileTypes: true})
-  const fileNames = items.filter((file) => !file.isDirectory()).map((file) => `${directory}/${file.name}`)
+  const items = await fs.readdir(directory, { withFileTypes: true })
+  const fileNames = items
+    .filter((file) => !file.isDirectory())
+    .map((file) => `${directory}/${file.name}`)
   const folders = items.filter((item) => item.isDirectory())
   for (const folder of folders) {
-    fileNames.push(...await findEmailTemplateFiles(`${directory}/${folder.name}`))
+    fileNames.push(...(await findEmailTemplateFiles(`${directory}/${folder.name}`)))
   }
 
   return fileNames
@@ -38,9 +40,12 @@ type MJMLTemplatesByLocale = {
 async function main() {
   const templatesDirectory = path.join(__dirname, 'templates')
   const filePaths = await findEmailTemplateFiles(templatesDirectory)
-  const mjmlTemplatePaths = filePaths.filter((emailTemplate) => path.extname(emailTemplate).includes('mjml') && !emailTemplate.includes('partials'))
+  const mjmlTemplatePaths = filePaths.filter(
+    (emailTemplate) =>
+      path.extname(emailTemplate).includes('mjml') && !emailTemplate.includes('partials')
+  )
 
-  const mjmlTemplatePathsByLocale: MJMLTemplatesByLocale = {en: [], fr: []}
+  const mjmlTemplatePathsByLocale: MJMLTemplatesByLocale = { en: [], fr: [] }
 
   for (const path of mjmlTemplatePaths) {
     if (path.includes('/en/')) {
@@ -52,18 +57,29 @@ async function main() {
   const srcParentPath = path.dirname('../src')
   const basePath = path.join(__dirname, path.basename(srcParentPath))
 
-  await fs.rm(`${basePath}/dist`, { recursive: true})
+  try {
+    await fs.stat(`${basePath}/dist`)
+    await fs.rm(`${basePath}/dist`, { recursive: true })
+  } catch (e) {}
 
   for (const key of Object.keys(mjmlTemplatePathsByLocale)) {
     for (const templateDict of mjmlTemplatePathsByLocale[key]) {
       const outputDirectory = `${basePath}/dist/${key}/${templateDict.name}`
-      await fs.mkdir(outputDirectory, {recursive: true})
-      const outputFilePath = `${outputDirectory}/body.html`
-      await fs.writeFile(outputFilePath, templateDict.content, 'utf-8')
+      await fs.mkdir(outputDirectory, { recursive: true })
+
+      const match = /<title>[^<>]*<\/title>/.exec(templateDict.content)
+      if (match) {
+        const subject = match[0].replace(/(<([^>]+)>)/g, '')
+        const txtOutputFilePath = `${outputDirectory}/subject.txt`
+        await fs.writeFile(txtOutputFilePath, subject.trim(), 'utf-8')
+      }
+
+      const htmlOutputFilePath = `${outputDirectory}/body.html`
+      await fs.writeFile(htmlOutputFilePath, templateDict.content, 'utf-8')
     }
   }
 }
 
 main().then(() => {
-  console.warn('finished')
+  console.warn('finished building templates')
 })
