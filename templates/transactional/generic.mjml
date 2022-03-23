@@ -1,4 +1,4 @@
-<mjml lang="{{ content_lang default='en-CA' }}">
+<mjml lang="{{ locale }}">
   <mj-head>
     <mj-font
             name="Poppins"
