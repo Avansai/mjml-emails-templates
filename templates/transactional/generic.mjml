@@ -1,4 +1,4 @@
-<mjml lang="{{ content_lang default='fr-CA' }}">
+<mjml lang="{{ content_lang default='en-CA' }}">
   <mj-head>
     <mj-font
             name="Poppins"
@@ -24,9 +24,6 @@
               font-size="18px"
       />
     </mj-attributes>
-    <mj-title>Validate your email address</mj-title>
-    <mj-preview>Please validate your email address to have access to all features!</mj-preview
-    >
     <mj-style>
       h1,
       .text-h1 h1 {
@@ -110,6 +107,8 @@
         }
       }
     </mj-style>
+    <mj-title>{{ title }}</mj-title>
+    <mj-preview>{{ preview }}</mj-preview>
   </mj-head>
 
   <mj-body>
@@ -133,15 +132,9 @@
       <mj-section padding="0">
         <mj-column>
           <mj-text css-class="text-body">
-            <h1>$title</h1>
-            <p>$greeting $displayName</p>
-            <p>
-              $verifyParagraph <a href="$link">link</a>
-            </p>
-
-            <p>
-              $footerParagraph
-            </p>
+            <h1>{{ title }}</h1>
+            <p>{{ greeting }}</p>
+            <p>{{ content }}</p>
           </mj-text>
         </mj-column>
       </mj-section>
@@ -164,13 +157,9 @@
             />
             <mj-text css-class="footer-text" align="center">
               <span>
-                <a href="https://avansai.com/terms-of-use" class="footer-link">
-                  Terms of Use
-                </a>
+                {{ termsOfUse }}
                 ·
-                <a href="https://avansai.com/privacy" class="footer-link">
-                  Privacy Policy
-                </a>
+                {{ privacyPolicy }}
               </span>
             </mj-text>
 
@@ -182,7 +171,7 @@
       <mj-section padding="0 0 32px 0" css-class="footer-section">
         <mj-column width="100%">
           <mj-text css-class="footer-text" align="center">
-            <p>205-15 Notre-Dame Street West, Montreal, QC H2Y 1S5</p>
+            <p>{{ companyAddress }}</p>
             <p>&copy; Avansai</p>
           </mj-text>
         </mj-column>

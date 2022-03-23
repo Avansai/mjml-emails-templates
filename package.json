@@ -2,10 +2,10 @@
   "name": "avansai-email-templates",
   "version": "1.0.0",
   "description": "Email templates used by Avansai",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "publish": "ts-node src/index.ts",
-    "lint": "mjml -v src/**/{email-confirm-change,email-verify,password-reset}/**/*.mjml"
+    "publish": "ts-node index.ts",
+    "lint": "mjml -v ./**/{email-confirm-change,email-verify,password-reset}/**/*.mjml"
   },
   "repository": {
     "type": "git",
