@@ -107,7 +107,7 @@
         }
       }
     </mj-style>
-    <mj-title>{{ title }}</mj-title>
+    <mj-title>{{ headTitle }}</mj-title>
     <mj-preview>{{ preview }}</mj-preview>
   </mj-head>
 
