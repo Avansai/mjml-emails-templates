@@ -38,7 +38,9 @@ async function main() {
   try {
     await fs.stat(outputDir)
     await fs.rm(outputDir, { recursive: true })
-  } catch (e) {}
+  } catch (e) {
+    console.error('error', e)
+  }
 
   for (const mjmlTemplatePath of mjmlTemplatePaths) {
     const extension = path.extname(mjmlTemplatePath)
