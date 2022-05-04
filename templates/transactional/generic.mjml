@@ -24,7 +24,7 @@
               font-size="18px"
       />
     </mj-attributes>
-    <mj-style>
+    <mj-style inline="inline">
       h1,
       .text-h1 h1 {
         font-size: 32px;

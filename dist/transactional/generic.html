@@ -92,63 +92,6 @@
     }
   </style>
   <style type="text/css">
-    h1,
-    .text-h1 h1 {
-      font-size: 32px;
-      line-height: 1.1;
-      margin: 0 0 16px 0;
-      font-weight: bold;
-    }
-
-    .text-body,
-    .content-wrapper p {
-      font-size: 16px;
-      margin: 8px 0;
-    }
-
-    blockquote {
-      background-color: #2d3748;
-      border-radius: 4px;
-      margin-left: 0;
-      margin-right: 0;
-      padding: 16px;
-      width: 100%;
-    }
-
-    a,
-    a:link,
-    a:visited {
-      font-size: inherit;
-      font-style: inherit;
-      font-weight: inherit;
-      color: #07c969;
-    }
-
-    .footer {
-      color: #718096;
-      font-size: 12px;
-    }
-
-    .footer-text,
-    .footer-text span,
-    .footer-text div,
-    .footer-text p,
-    .footer-text a,
-    .footer-text a:link,
-    .footer-text a:visited {
-      font-size: 12px;
-      line-height: 1.25;
-      margin: 0;
-      padding: 0;
-      color: #718096;
-    }
-
-    .footer-link,
-    a.footer-link,
-    a:visited.footer-link {
-      text-decoration: none;
-    }
-
     a:hover {
       text-decoration: none !important;
     }
@@ -204,7 +147,7 @@
                                     <tbody>
                                       <tr>
                                         <td style="vertical-align:top;padding:0;">
-                                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="" width="100%">
+                                          <table border="0" cellpadding="0" cellspacing="0" role="presentation" style width="100%">
                                             <tbody>
                                               <tr>
                                                 <td align="center" style="font-size:0px;padding:0px 16px 0px 0px;word-break:break-word;">
@@ -212,8 +155,8 @@
                                                     <tbody>
                                                       <tr>
                                                         <td style="width:110px;">
-                                                          <a href="https://avansai.com" target="_blank">
-                                                            <img alt="Avansai logo" height="auto" src="http://cdn.mcauto-images-production.sendgrid.net/c5e9dfce5cf574d4/c08bcd3f-485c-4440-81c1-685bc36c5761/220x84.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="110" />
+                                                          <a href="https://avansai.com" target="_blank" style="font-size: inherit; font-style: inherit; font-weight: inherit; color: #07c969;">
+                                                            <img alt="Avansai logo" height="auto" src="http://cdn.mcauto-images-production.sendgrid.net/c5e9dfce5cf574d4/c08bcd3f-485c-4440-81c1-685bc36c5761/220x84.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="110">
                                                           </a>
                                                         </td>
                                                       </tr>
@@ -262,11 +205,11 @@
                           <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                             <tbody>
                               <tr>
-                                <td align="left" class="text-body" style="font-size:0px;padding:0;word-break:break-word;">
+                                <td align="left" class="text-body" style="margin: 8px 0; font-size: 0px; padding: 0; word-break: break-word;">
                                   <div style="font-family:Poppins, Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:1.65;text-align:left;color:#ffffff;">
-                                    <h1>{{ title }}</h1>
-                                    <p>{{ greeting }}</p>
-                                    <p>{{ content }}</p>
+                                    <h1 style="font-size: 32px; line-height: 1.1; margin: 0 0 16px 0; font-weight: bold;">{{ title }}</h1>
+                                    <p style="font-size: 16px; margin: 8px 0;">{{ greeting }}</p>
+                                    <p style="font-size: 16px; margin: 8px 0;">{{ content }}</p>
                                   </div>
                                 </td>
                               </tr>
@@ -286,7 +229,7 @@
       </table>
     </div>
     <!--[if mso | IE]></td></tr></table><![endif]-->
-    <table align="center" class="footer" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#000000;background-color:#000000;width:100%;">
+    <table align="center" class="footer" border="0" cellpadding="0" cellspacing="0" role="presentation" style="color: #718096; font-size: 12px; background: #000000; background-color: #000000; width: 100%;" width="100%" bgcolor="#000000">
       <tbody>
         <tr>
           <td>
@@ -317,8 +260,8 @@
                                           </td>
                                         </tr>
                                         <tr>
-                                          <td align="center" class="footer-text" style="font-size:0px;padding:0;word-break:break-word;">
-                                            <div style="font-family:Poppins, Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:1.65;text-align:center;color:#ffffff;"><span>
+                                          <td align="center" class="footer-text" style="line-height: 1.25; margin: 0; color: #718096; font-size: 0px; padding: 0; word-break: break-word;">
+                                            <div style="margin: 0; padding: 0; font-family: Poppins, Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.65; text-align: center; color: #ffffff;"><span style="font-size: 12px; line-height: 1.25; margin: 0; padding: 0; color: #718096;">
                                                 {{ termsOfUse }} · {{ privacyPolicy }}
                                               </span></div>
                                           </td>
@@ -350,10 +293,10 @@
                                   <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
                                     <tbody>
                                       <tr>
-                                        <td align="center" class="footer-text" style="font-size:0px;padding:0;word-break:break-word;">
-                                          <div style="font-family:Poppins, Ubuntu, Helvetica, Arial, sans-serif;font-size:16px;font-weight:500;line-height:1.65;text-align:center;color:#ffffff;">
-                                            <p>{{ companyAddress }}</p>
-                                            <p>&copy; Avansai</p>
+                                        <td align="center" class="footer-text" style="line-height: 1.25; margin: 0; color: #718096; font-size: 0px; padding: 0; word-break: break-word;">
+                                          <div style="margin: 0; padding: 0; font-family: Poppins, Ubuntu, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; line-height: 1.65; text-align: center; color: #ffffff;">
+                                            <p style="font-size: 12px; line-height: 1.25; margin: 0; padding: 0; color: #718096;">{{ companyAddress }}</p>
+                                            <p style="font-size: 12px; line-height: 1.25; margin: 0; padding: 0; color: #718096;">&copy; Avansai</p>
                                           </div>
                                         </td>
                                       </tr>
