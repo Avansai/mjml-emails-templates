@@ -13,9 +13,12 @@
               font-size="16px"
               line-height="1.65"
       />
-      <mj-body background-color="#1A202C" color="#ffffff"></mj-body>
+      <mj-body background-color="#1A202C"></mj-body>
     </mj-attributes>
     <mj-style inline="inline">
+      p, h1 {
+        color: #ffffff;
+      }
       h1,
       .text-h1 h1 {
         font-size: 32px;
