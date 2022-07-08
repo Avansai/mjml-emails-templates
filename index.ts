@@ -6,7 +6,7 @@ const output = 'dist'
 
 async function getHTLMFromMJML(filePath: string) {
   const fileContent = await fs.readFile(filePath, 'utf-8')
-  return mjml2html(fileContent.toString(), { beautify: true, minify: false }).html
+  return mjml2html(fileContent.toString(), { minify: false }).html
 }
 
 async function findEmailTemplateFiles(directory: string) {
@@ -35,6 +35,7 @@ async function main() {
   const mjmlTemplatePaths = filePaths.filter(
     (filePath) => path.extname(filePath).includes('mjml') && !filePath.includes('partials')
   )
+
   try {
     await fs.stat(outputDir)
     await fs.rm(outputDir, { recursive: true })

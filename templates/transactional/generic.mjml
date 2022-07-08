@@ -13,16 +13,7 @@
               font-size="16px"
               line-height="1.65"
       />
-      <mj-body background-color="#1A202C"></mj-body>
-      <mj-button
-              background-color="#07C969"
-              color="#000000"
-              font-weight="bold"
-              line-height="1"
-              padding="8px 16px"
-              border-radius="4px"
-              font-size="18px"
-      />
+      <mj-body background-color="#1A202C" color="#ffffff"></mj-body>
     </mj-attributes>
     <mj-style inline="inline">
       h1,
