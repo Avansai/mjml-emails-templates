@@ -2,10 +2,10 @@
   <mj-head>
     <mj-font
             name="Poppins"
-            href="https://fonts.googleapis.com/css?family=Poppins:ital,wght@0,500;0,700;1,500"
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700"
     />
     <mj-attributes>
-      <mj-all font-family="Poppins, Ubuntu, Helvetica, Arial, sans-serif" />
+      <mj-all font-family="Space Grotesk', sans-serif" font-weight="400" />
       <mj-text
               color="#fff"
               padding="0"
@@ -30,7 +30,7 @@
         font-size: 32px;
         line-height: 1.1;
         margin: 0 0 16px 0;
-        font-weight: bold;
+        font-weight: 700;
       }
 
       .text-body,
